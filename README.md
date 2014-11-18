@@ -5,11 +5,25 @@ This task involves writing or creating weighted context-free grammars
 in order to parse English sentences and utterances. The vocabulary
 is fixed. 
 
+## Notation
+
+A context-free grammar (CFG) is defined using the following building blocks:
+
+* $$N$$, a set of non-terminal symbols (these symbols do not appear in the input)
+* $$S$$, one non-terminal from $$N$$ called the start symbol. All derivations in a CFG start from $$S$$
+* $$V$$, a vocabulary of words called terminal symbols. $$N$$ and $$V$$ are disjoint
+* Rules of the form: $$A \rightarrow \alpha$$ where $$A \in N$$ and $$\alpha \in (N \cup V)^\ast$$.
+* Weights or frequencies or probabilities can be associated with each rule in a CFG.
+
+A context-free grammar that is in extended Chomsky Normal Form
+(eCNF) iff the right hand side of each CFG rule is either one
+non-terminal, or two non-terminals, or one terminal symbol.
+
 ## The Data
 
 Initial versions of the context-free grammar files are provided to you:
 
-* `S1.gr`: the default grammar file contains a context-free grammar in extended Chomsky Normal Form (eCNF).
+* `S1.gr`: the default grammar file contains a context-free grammar in eCNF.
 * `S2.gr`: the default backoff grammar file.
 * `Vocab.gr`: the vocabulary file contains rules of the type `A -> a` where `A` is a non-terminal that represents the part of speech and `a` is a word (also called a terminal symbol).
 
