@@ -27,6 +27,7 @@ A context-free grammar (CFG) is defined using the following building blocks:
 * $$V$$, a vocabulary of words called terminal symbols. $$N$$ and $$V$$ are disjoint
 * Rules of the form: $$A \rightarrow \alpha$$ where $$A \in N$$ and $$\alpha \in (N \cup V)^\ast$$.
 * Weights or frequencies or probabilities can be associated with each rule in a CFG.
+* A probabilistic CFG is defined as a group of conditional probabilities $$P(\alpha \mid A)$$: one for each non-terminal $$A$$
 
 A context-free grammar that is in extended Chomsky Normal Form
 (eCNF) iff the right hand side of each CFG rule is either one
@@ -54,8 +55,8 @@ line is the right-hand side of the CFG rule:
 The non-terminal `VP` is used to keep the grammar in eCNF. The
 probability of a particular rule is obtained by normalizing the
 weights for each left-hand side non-terminal in the grammar. For
-example, for rule `NP -> Det Nbar` the probability
-is $$\frac{20}{20+1}$$.
+example, for rule `NP -> Det Nbar` the conditional probability
+`P(Det Nbar | NP)` is $$\frac{20}{20+1}$$.
 
 The grammars in `S1.gr` and `S2.gr` are connected via the following rules in `S1.gr`:
 
